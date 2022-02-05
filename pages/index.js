@@ -12,5 +12,10 @@ export default function App() {
 
   if (error) return 'An error has occurred.';
   if (!data) return 'Loading...';
-  return <code>{JSON.stringify(data, null, 2)}</code>;
+  return (
+    <main>
+      <p>This is a preview</p>
+      <code>{JSON.stringify(data, null, 2)}</code>
+    </main>
+  );
 }
