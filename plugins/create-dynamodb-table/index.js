@@ -5,6 +5,13 @@ module.exports = {
     const AWS = require('aws-sdk');
     const fs = require('fs');
     const tableName = `NetlifyFunctionsDeployPreview_${deployId}_Movies`;
+
+    AWS.config.update({
+      region: process.env.REGION,
+      accessKeyId: process.env.BUILD_ACCESS_KEY_ID,
+      secretAccessKey: process.env.BUILD_SECRET_ACCESS_KEY
+    });
+
     const dynamodb = new AWS.DynamoDB();
 
     const params = {
