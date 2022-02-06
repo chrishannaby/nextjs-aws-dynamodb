@@ -1,5 +1,5 @@
 [build]
   command = "next build"
   functions = "netlify/functions"
-  publish = ".next
+  publish = ".next"
   ignore = "bash ./netlify-ignore.sh"
