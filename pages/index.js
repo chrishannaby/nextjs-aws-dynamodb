@@ -14,7 +14,7 @@ export default function App() {
   if (!data) return 'Loading...';
   return (
     <main>
-      <p>This is a deploy preview</p>
+      <p>This is a deploy preview.</p>
       <code>{JSON.stringify(data, null, 2)}</code>
     </main>
   );
