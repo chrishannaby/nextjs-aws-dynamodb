@@ -3,3 +3,6 @@
   functions = "netlify/functions"
   publish = ".next"
   ignore = "bash ./netlify-ignore.sh"
+
+[[context.deploy-preview.plugins]]
+  package = "./plugins/create-dynamodb-table"
