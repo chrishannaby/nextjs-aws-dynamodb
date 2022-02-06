@@ -6,7 +6,6 @@ module.exports = {
       accessKeyId: process.env.BUILD_AWS_ACCESS_KEY,
       secretAccessKey: process.env.BUILD_AWS_SECRET_KEY
     };
-    console.log(AWS);
     const tableName = process.env.TABLE_NAME;
 
     var dynamodb = new AWS.DynamoDB(params);
