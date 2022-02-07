@@ -22,7 +22,13 @@ export async function getServerSideProps() {
 
 export default function App({ movies }) {
   const movieRows = movies.map((movie) => (
-    <p key={movie.title}>{movie.title}</p>
+    <li className="w-64 py-12" key={movie.title}>
+      {movie.title}
+    </li>
   ));
-  return <main>{movieRows}</main>;
+  return (
+    <ul className="max-w-screen grid grid-flow-col auto-cols-auto auto-rows-auto	 p-12">
+      {movieRows}
+    </ul>
+  );
 }
