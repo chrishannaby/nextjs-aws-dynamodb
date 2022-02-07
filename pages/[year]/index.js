@@ -1,4 +1,3 @@
-import db from '../../db.json';
 import dynamoDb from '../../lib/dynamo-db';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +6,6 @@ import Header from '../../components/Header.js';
 async function getMoviesFromYear(year) {
   const numericYear = parseInt(year, 10);
   const params = {
-    TableName: db.TableName,
     KeyConditionExpression: '#yr = :yyyy',
     ExpressionAttributeNames: {
       '#yr': 'year'

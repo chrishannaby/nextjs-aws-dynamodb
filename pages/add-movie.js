@@ -1,10 +1,25 @@
+import { useRouter } from 'next/router';
 import Header from '../components/Header';
 
 export default function AddMovie() {
-  const handleSubmit = (e) => {
+  const router = useRouter();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    console.log(form.year.value);
+    const params = {
+      title: form.title.value,
+      year: parseInt(form.year.value.split('-')[0], 10),
+      info: {
+        image_url: form.image.value,
+        plot: form.plot.value
+      }
+    };
+    const res = await fetch('/api/movie', {
+      method: 'POST',
+      body: JSON.stringify(params)
+    });
+    const data = await res.json();
+    router.push(data.pathname);
   };
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 overflow-hidden sm:py-24 sm:px-6 lg:px-8">
