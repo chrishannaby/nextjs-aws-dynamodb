@@ -1,11 +1,9 @@
-import db from '../db.json';
 import dynamoDb from '../lib/dynamo-db';
 import Link from 'next/link';
 import Header from '../components/Header.js';
 
 async function getMovieYears() {
   var params = {
-    TableName: db.TableName,
     ProjectionExpression: '#yr',
     ExpressionAttributeNames: {
       '#yr': 'year'
@@ -27,7 +25,7 @@ export async function getServerSideProps() {
 export default function App({ years }) {
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 overflow-hidden sm:py-24 sm:px-6 lg:px-8">
-      <Header title="Netlify Movie Database">
+      <Header title="Netlify Movie Database!">
         Find films by release date by selecting a year below
       </Header>
       <ul className="mt-12 flex gap-4 flex-wrap items-center justify-center">
