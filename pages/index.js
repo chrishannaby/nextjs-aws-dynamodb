@@ -33,11 +33,13 @@ export default function App({ years }) {
       <ul className="mt-12 flex gap-4 flex-wrap items-center justify-center">
         {years.map((year) => {
           return (
-            <Link href={`/${year}`}>
-              <a className="inline-flex items-center py-3 w-24 justify-center border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {year}
-              </a>
-            </Link>
+            <li key={year}>
+              <Link href={`/${year}`}>
+                <a className="inline-flex items-center py-3 w-24 justify-center border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  {year}
+                </a>
+              </Link>
+            </li>
           );
         })}
       </ul>
