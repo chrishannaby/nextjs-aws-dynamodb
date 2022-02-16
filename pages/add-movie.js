@@ -24,7 +24,7 @@ export default function AddMovie() {
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 overflow-hidden sm:py-24 sm:px-6 lg:px-8">
       <Header title="Add movie">
-        Add your favourite movie to our database
+        Add your favourite movie to our database!
       </Header>
       <form onSubmit={handleSubmit} className="mt-12 grid grid-cols-1 gap-y-6">
         <div>
