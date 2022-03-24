@@ -1,11 +1,9 @@
-import db from '../db.json';
 import dynamoDb from '../lib/dynamo-db';
 import Link from 'next/link';
 import Header from '../components/Header.js';
 
 async function getMovieYears() {
   var params = {
-    TableName: db.TableName,
     ProjectionExpression: '#yr',
     ExpressionAttributeNames: {
       '#yr': 'year'
